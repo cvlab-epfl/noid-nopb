@@ -1,0 +1,21 @@
+---
+  main:
+  dataset:
+    --hm_size :
+      - "128"
+      - "128"
+    --hm_radius : '5'
+    --pred_file_train: "/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_mot17_result_halftrain.json" #"/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_result_halftrain.json"
+    --pred_file_val: "/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_mot17_result_halfval.json" #"/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_result_halfval.json"
+    --pred_file_test: "/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_mot17_result_test.json" #"/cvlabscratch/cvlab/home/engilber/dev/test_time_flow/data/bytrack_result_test.json"
+    --path_reid_features: "/cvlabscratch/cvlab/home/engilber/datasets/MOT17/reid/yolox_osnetfeatures/crop_features.npy"
+    --path_reid_map: "/cvlabscratch/cvlab/home/engilber/datasets/MOT17/reid/yolox_osnetfeatures/crop_id_annotation_file.json"
+    --calibration_dir: "/cvlabscratch/cvlab/home/engilber/datasets/MOT17/calibration_data/"
+    --gt_mot_dir: "/cvlabscratch/cvlab/home/engilber/datasets/MOT17/train/{mot_set}/gt/gt.txt"
+
+  training:
+    --loss_to_print:
+      - loss_cont_rec
+      - loss_cont_time_consistency
+      - loss_cont_reg_offset
+      - loss_cont_smoothing_offset
