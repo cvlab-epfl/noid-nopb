@@ -1,0 +1,11 @@
+addict==2.4.0
+coloredlogs==15.0.1
+lap==0.4.0
+numpy==1.23.5
+psutil==5.9.5
+PyYAML==6.0.2
+scipy==1.14.1
+torch==2.0.1
+torchvision==0.15.2
+trackeval==1.0.dev1
+verboselogs==1.7

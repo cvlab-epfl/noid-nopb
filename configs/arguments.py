@@ -62,7 +62,7 @@ parser.add_argument("-mtl", "--max_tracklet_lenght",
 parser.add_argument("-cfg", "--config_file",
     dest="config_file",
     type=str,
-    default="./configs/files/config_continuous_test_time.yaml",
+    default="./configs/files/config_continuous_test_time_mot17.yaml",
     help="Path to YAML config file with default values (command line args override these)"
 )
 
@@ -193,7 +193,7 @@ parser_data.add_argument("-shft", "--shuffle_train",
 parser_data.add_argument("-bs", "--batch_size",
     dest="batch_size",
     type=int,
-    default=1,
+    default=4,
     help="Batch size"
 )
 parser_data.add_argument("-nw", "--num_workers",
@@ -423,7 +423,7 @@ parser_loss.add_argument("-lbdrd", "--lambda_reg_det",
 parser_loss.add_argument("-lbdrs", "--lambda_smoothing",
     dest="lambda_smoothing",
     type=float,
-    default="0",
+    default="10",
     help="Offset smoothing weight"
 )
 parser_loss.add_argument("-lbdcs", "--lambda_consistency",
