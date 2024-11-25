@@ -1,30 +1,9 @@
 import torch
 
-
-def get_coord_grid(x_size: int, y_size: int, device=None) -> torch.Tensor:
-    """Creates a coordinate grid of size (x_size, y_size).
-    
-    Args:
-        x_size: Width of the grid
-        y_size: Height of the grid 
-        device: PyTorch device to place tensor on
-
-    Returns:
-        Coordinate grid tensor of shape (y_size, x_size, 2) containing (x,y) coordinates
-    """
-    xs = torch.arange(0, x_size, device=device)
-    ys = torch.arange(0, y_size, device=device)
-    x, y = torch.meshgrid(xs, ys)
-    
-    coord_grid = torch.stack([x, y]).permute(2, 1, 0)
-    
-    return coord_grid.float()
-
-
 def reconstruct_from_motion_offset(
     hm: torch.Tensor,
     offset: torch.Tensor = None,
-    ksize: int = 3,
+    ksize: int = 39,
     expe_weight: float = 0.5,
     shift: float = -10.0,
     slope: float = 4.0
@@ -89,3 +68,23 @@ def reconstruct_from_motion_offset(
     rec = (hm_u * distance).sum(dim=(4, 5))
 
     return rec
+
+
+def get_coord_grid(x_size: int, y_size: int, device=None) -> torch.Tensor:
+    """Creates a coordinate grid of size (x_size, y_size).
+    
+    Args:
+        x_size: Width of the grid
+        y_size: Height of the grid 
+        device: PyTorch device to place tensor on
+
+    Returns:
+        Coordinate grid tensor of shape (y_size, x_size, 2) containing (x,y) coordinates
+    """
+    xs = torch.arange(0, x_size, device=device)
+    ys = torch.arange(0, y_size, device=device)
+    x, y = torch.meshgrid(xs, ys)
+    
+    coord_grid = torch.stack([x, y]).permute(2, 1, 0)
+    
+    return coord_grid.float()

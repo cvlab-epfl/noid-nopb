@@ -28,6 +28,8 @@ offset = torch.randn(1, 256, 256, 2)   # Example offset
 reconstructed_heatmap = reconstruct_from_motion_offset(heatmap, offset)
 ```
 
+ [![Try the reconstruction in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cvlab-epfl/noid-nopb/blob/main/reconstruction_demo.ipynb)
+
 
 
 ## Reproducing Results on MOT17
