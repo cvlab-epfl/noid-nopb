@@ -20,10 +20,8 @@ def load_data(file_pathes, all_data=False, use_gt=False, mot_gt_dir=None):
                 frame_data = json.loads(line)
                 mot_set = frame_data["img_path"].split("/")[-3]
 
-                # print(frame_data["img_path"])
-
                 if mot_set not in mot_gt and use_gt:
-                    mot_gt[mot_set] = load_mot_gt(Path(mot_gt_dir.format(mot_set)))  #f"/cvlabscratch/cvlab/home/engilber/datasets/MOT20/train/{mot_set}/gt/gt.txt"))
+                    mot_gt[mot_set] = load_mot_gt(Path(mot_gt_dir.format(mot_set))) 
                 
                 if mot_set[-3:] != "DPM" and not all_data:
                     continue
