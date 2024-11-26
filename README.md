@@ -70,11 +70,13 @@ The `--frame_skip` option allows to skip frames for evaluation (15 results in 2 
 ## Citation
 If you find this work useful in your research, please consider citing:
 ```
-@article{engilberge2024noidnopb,
+@article{engilberge2024no,
     title = {No Identity, no problem: Motion through detection for people tracking},
     author = {Martin Engilberge and F. Wilke Grosche and Pascal Fua},
     journal = {Transactions on Machine Learning Research},
-    year = {2024}
+    issn={2835-8856},
+    year={2024},
+    url={https://openreview.net/forum?id=ogEM2H9IGK}
 }
 ```
 
